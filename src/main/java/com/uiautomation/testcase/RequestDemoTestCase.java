@@ -12,7 +12,7 @@ import com.uiautomation.utilities.BrowserFactory;
 
 
 public class RequestDemoTestCase {
-	WebDriver driver;
+	public WebDriver driver;
 	
 	
 	@BeforeMethod
