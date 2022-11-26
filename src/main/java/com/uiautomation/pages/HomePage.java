@@ -15,33 +15,33 @@ WebDriver driver;
 		this.driver=localDriver;
 	}
 	@FindBy(xpath = "//a[.='Products']//following-sibling::i[1]")
-	WebElement Products;
+	WebElement products;
 	@FindBy(xpath ="//h2[.='Freshdesk']")
-	WebElement FreshDesk;
+	WebElement freshDesk;
 	@FindBy(xpath = "//button[.='ACCEPT ALL']")
-	WebElement AcceptCookies;
+	WebElement acceptCookies;
 	@FindBy(how=How.XPATH,using="//p[contains(text(),'Engage')]")
-	WebElement StartTodayText;
+	WebElement startTodayText;
 	@FindBy(how = How.XPATH,using="//p[contains(text(),'Engage')]//following-sibling::div[@class='mt-md']//a[last()]")
-	WebElement RequestDemo;
+	WebElement requestDemo;
 	
 	public void click() throws InterruptedException
 	{
-		AcceptCookies.click();
+		acceptCookies.click();
 		
-		Products.click();
-		
-		Thread.sleep(5000);
-		
-		FreshDesk.click();
+		products.click();
 		
 		Thread.sleep(5000);
 		
-		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",StartTodayText);
+		freshDesk.click();
 		
 		Thread.sleep(5000);
 		
-		RequestDemo.click();
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",startTodayText);
+		
+		Thread.sleep(5000);
+		
+		requestDemo.click();
 		
 	}
 }

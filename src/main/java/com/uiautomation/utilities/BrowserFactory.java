@@ -12,7 +12,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserFactory
 {
-
+	private BrowserFactory()
+	{
+		throw new IllegalStateException("Utility class");
+	}
 	static WebDriver driver;
 	
 	public static WebDriver startBrowser(String browsername,String url)
