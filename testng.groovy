@@ -12,14 +12,14 @@ pipeline {
         {
             steps
             {
-                bat script'mvn compile'
+                bat script:'mvn compile'
             }
         }
         stage('Run Test')
         {
             steps
             {
-                bat script 'mvn test -Dbrowser=localchrome'
+                bat script:'mvn test -Dbrowser=localchrome'
             }
         }
         
