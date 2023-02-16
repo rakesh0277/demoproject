@@ -24,16 +24,16 @@ public class BrowserFactory {
 
 	static WebDriver driver;
 //	@SuppressWarnings("rawtypes")
-//	static AbstractDriverOptions options = null;
+	static AbstractDriverOptions options = null;
 //	static ChromeOptions chromeOptions=null;
 
 	public static WebDriver startBrowser(String browsername, String url) throws MalformedURLException {
 		if (browsername.equalsIgnoreCase("FireFox")) {
 
-			driver = new FirefoxDriver();
+			//driver = new FirefoxDriver();
 //====================Below options to run testcase in docker=======
-//			options = new FirefoxOptions();
-//			options.setCapability("browsername", "firefox");
+			options = new FirefoxOptions();
+			options.setCapability("browsername", "firefox");
 
 		} else if (browsername.equalsIgnoreCase("Chrome")) {
 
@@ -46,13 +46,13 @@ public class BrowserFactory {
 			driver = new ChromeDriver();
 
 		} else if (browsername.equalsIgnoreCase("Edge")) {
-			driver = new EdgeDriver();
+		//	driver = new EdgeDriver();
 //====================Below options to run testcase in docker=======
 //			options = new EdgeOptions();
 //			options.setCapability("browsername", "edge");
 		}
 //================below options to run test case in remote server like docker==============
-//		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+	//	WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
 		driver.get(url);
 		return driver;
 	}
